@@ -1,6 +1,7 @@
 class LikesController < ApplicationController
   def index
-    @likes = Like.page(params[:page]).per(10)
+    @q = Like.ransack(params[:q])
+    @likes = @q.result(:distinct => true).includes(:user, :detail).page(params[:page]).per(10)
 
     render("like_templates/index.html.erb")
   end
