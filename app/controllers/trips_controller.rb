@@ -43,7 +43,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params.fetch("id_to_modify"))
 
     @trip.name = params.fetch("name")
-    @trip.user_id = params.fetch("user_id")
+    
 
     if @trip.valid?
       @trip.save
