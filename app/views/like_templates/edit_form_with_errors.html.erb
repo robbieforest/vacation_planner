@@ -24,7 +24,7 @@
     </label>
 
     <!-- Input for detail_id start -->
-    <input type="text" id="detail_id" name="detail_id" class="form-control" value="<%= @like.detail_id %>">
+    <%= select_tag(:detail_id, options_from_collection_for_select(TripDetail.all, :id, :trip_id, @like.detail_id), :class => "form-control") %>
     <!-- Input for detail_id end -->
   </div>
   <!-- Label and input for detail_id end -->
