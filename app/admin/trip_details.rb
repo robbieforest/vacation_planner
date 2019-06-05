@@ -1,4 +1,6 @@
 ActiveAdmin.register TripDetail do
+
+ permit_params :trip_id, :description, :price, :url, :detail_type_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
