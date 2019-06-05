@@ -6,6 +6,7 @@ class TripsController < ApplicationController
   end
 
   def show
+    @trip_detail = TripDetail.new
     @trip = Trip.find(params.fetch("id_to_display"))
 
     render("trip_templates/show.html.erb")

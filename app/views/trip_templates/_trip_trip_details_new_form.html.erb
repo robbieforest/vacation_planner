@@ -1,0 +1,61 @@
+<!-- Form trip_detail start -->
+<form action="/create_trip_detail_from_trip" method="post">
+<!-- Form trip_detail end -->
+
+  <!-- Label and input for trip_id start -->
+  <!-- Input for trip_id start -->
+  <input type="hidden" name="trip_id" value="<%= @trip.id %>">
+  <!-- Input for trip_id end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @trip_detail.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <label for="price">
+      Price
+    </label>
+
+    <!-- Input for price start -->
+    <input type="text" id="price" name="price" class="form-control" value="<%= @trip_detail.price %>">
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <!-- Label and input for url start -->
+  <div class="form-group">
+    <label for="url">
+      Url
+    </label>
+
+    <!-- Input for url start -->
+    <input type="text" id="url" name="url" class="form-control" value="<%= @trip_detail.url %>">
+    <!-- Input for url end -->
+  </div>
+  <!-- Label and input for url end -->
+
+  <!-- Label and input for detail_type_id start -->
+  <div class="form-group">
+    <label for="detail_type_id">
+      Detail type
+    </label>
+
+    <!-- Input for detail_type_id start -->
+    <input type="text" id="detail_type_id" name="detail_type_id" class="form-control" value="<%= @trip_detail.detail_type_id %>">
+    <!-- Input for detail_type_id end -->
+  </div>
+  <!-- Label and input for detail_type_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create trip detail
+  </button>
+</form>

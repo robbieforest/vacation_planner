@@ -6,6 +6,8 @@ class TripDetailsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @like = Like.new
     @trip_detail = TripDetail.find(params.fetch("id_to_display"))
 
     render("trip_detail_templates/show.html.erb")
@@ -30,6 +32,24 @@ class TripDetailsController < ApplicationController
       @trip_detail.save
 
       redirect_back(:fallback_location => "/trip_details", :notice => "Trip detail created successfully.")
+    else
+      render("trip_detail_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_trip
+    @trip_detail = TripDetail.new
+
+    @trip_detail.trip_id = params.fetch("trip_id")
+    @trip_detail.description = params.fetch("description")
+    @trip_detail.price = params.fetch("price")
+    @trip_detail.url = params.fetch("url")
+    @trip_detail.detail_type_id = params.fetch("detail_type_id")
+
+    if @trip_detail.valid?
+      @trip_detail.save
+
+      redirect_to("/trips/#{@trip_detail.trip_id}", notice: "TripDetail created successfully.")
     else
       render("trip_detail_templates/new_form_with_errors.html.erb")
     end
