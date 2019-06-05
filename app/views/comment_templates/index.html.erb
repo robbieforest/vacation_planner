@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "comment_templates/comments_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,13 +54,10 @@
 
       <% @comments.each do |comment| %>
       <tr>
-        <!-- Display comment.id start -->
         <td>
           <%= comment.id %>
         </td>
-        <!-- Display comment.id end -->
 
-        <!-- Display comment.user_id start -->
         <td>
           <% if comment.user.present? %>
             <a href="/users/<%= comment.user.id %>">
@@ -72,15 +65,11 @@
             </a>
           <% end %>
         </td>
-        <!-- Display comment.user_id end -->
 
-        <!-- Display comment.body start -->
         <td>
           <%= comment.body %>
         </td>
-        <!-- Display comment.body end -->
 
-        <!-- Display comment.detail_id start -->
         <td>
           <% if comment.detail.present? %>
             <a href="/trip_details/<%= comment.detail.id %>">
@@ -88,19 +77,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display comment.detail_id end -->
 
-        <!-- Display comment.created_at start -->
         <td>
           <%= time_ago_in_words(comment.created_at) %> ago
         </td>
-        <!-- Display comment.created_at end -->
 
-        <!-- Display comment.updated_at start -->
         <td>
           <%= time_ago_in_words(comment.updated_at) %> ago
         </td>
-        <!-- Display comment.updated_at end -->
 
         <td>
           <a href="/comments/<%= comment.id %>">

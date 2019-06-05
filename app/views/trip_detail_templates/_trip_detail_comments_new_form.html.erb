@@ -1,35 +1,22 @@
-<!-- Form comment start -->
 <form action="/create_comment_from_trip_detail" method="post">
-<!-- Form comment end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @comment.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for body start -->
   <div class="form-group">
     <label for="body">
       Body
     </label>
 
-    <!-- Input for body start -->
     <input type="text" id="body" name="body" class="form-control" value="<%= @comment.body %>">
-    <!-- Input for body end -->
   </div>
-  <!-- Label and input for body end -->
 
-  <!-- Label and input for detail_id start -->
-  <!-- Input for detail_id start -->
   <input type="hidden" name="detail_id" value="<%= @trip_detail.id %>">
-  <!-- Input for detail_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create comment

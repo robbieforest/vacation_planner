@@ -4,24 +4,16 @@
 
 <hr>
 
-<!-- Form trip start -->
 <form action="/update_trip/<%= @trip.id %>" method="post">
-<!-- Form trip end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @trip.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update trip

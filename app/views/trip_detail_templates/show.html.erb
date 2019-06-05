@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link trip_detail start -->
       <div class="col">
         <a href="/trip_details/<%= @trip_detail.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit trip detail
         </a>
       </div>
-      <!-- Edit link trip_detail end -->
 
-      <!-- Delete link trip_detail start -->
       <div class="col">
         <a href="/delete_trip_detail/<%= @trip_detail.id %>" class="btn btn-block btn-outline-secondary">
           Delete trip detail
         </a>
       </div>
-      <!-- Delete link trip_detail end -->
     </div>
 
     <dl>
       <dt>
         Trip
       </dt>
-      <!-- Display trip_id start -->
       <dd>
         <% if @trip_detail.trip.present? %>
           <a href="/trips/<%= @trip_detail.trip_id %>">
@@ -40,66 +35,52 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display trip_id end -->
 
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @trip_detail.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Price
       </dt>
-      <!-- Display price start -->
       <dd>
         <%= @trip_detail.price %>
       </dd>
-      <!-- Display price end -->
 
       <dt>
         Url
       </dt>
-      <!-- Display url start -->
       <dd>
         <%= @trip_detail.url %>
       </dd>
-      <!-- Display url end -->
 
       <dt>
         Detail type
       </dt>
-      <!-- Display detail_type_id start -->
       <dd>
         <%= @trip_detail.detail_type_id %>
       </dd>
-      <!-- Display detail_type_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@trip_detail.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@trip_detail.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "trip_detail_templates/trip_detail_likes" %>
@@ -111,4 +92,3 @@
     <%= render partial: "trip_detail_templates/trip_detail_comments" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

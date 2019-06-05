@@ -1,23 +1,14 @@
-<!-- Form like start -->
 <form action="/create_like_from_trip_detail" method="post">
-<!-- Form like end -->
 
-  <!-- Label and input for detail_id start -->
-  <!-- Input for detail_id start -->
   <input type="hidden" name="detail_id" value="<%= @trip_detail.id %>">
-  <!-- Input for detail_id end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @like.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create like

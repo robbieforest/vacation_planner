@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "trip_detail_templates/trip_details_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -66,13 +62,10 @@
 
       <% @trip_details.each do |trip_detail| %>
       <tr>
-        <!-- Display trip_detail.id start -->
         <td>
           <%= trip_detail.id %>
         </td>
-        <!-- Display trip_detail.id end -->
 
-        <!-- Display trip_detail.trip_id start -->
         <td>
           <% if trip_detail.trip.present? %>
             <a href="/trips/<%= trip_detail.trip.id %>">
@@ -80,43 +73,30 @@
             </a>
           <% end %>
         </td>
-        <!-- Display trip_detail.trip_id end -->
 
-        <!-- Display trip_detail.description start -->
         <td>
           <%= trip_detail.description %>
         </td>
-        <!-- Display trip_detail.description end -->
 
-        <!-- Display trip_detail.price start -->
         <td>
           <%= trip_detail.price %>
         </td>
-        <!-- Display trip_detail.price end -->
 
-        <!-- Display trip_detail.url start -->
         <td>
           <%= trip_detail.url %>
         </td>
-        <!-- Display trip_detail.url end -->
 
-        <!-- Display trip_detail.detail_type_id start -->
         <td>
           <%= trip_detail.detail_type_id %>
         </td>
-        <!-- Display trip_detail.detail_type_id end -->
 
-        <!-- Display trip_detail.created_at start -->
         <td>
           <%= time_ago_in_words(trip_detail.created_at) %> ago
         </td>
-        <!-- Display trip_detail.created_at end -->
 
-        <!-- Display trip_detail.updated_at start -->
         <td>
           <%= time_ago_in_words(trip_detail.updated_at) %> ago
         </td>
-        <!-- Display trip_detail.updated_at end -->
 
         <td>
           <a href="/trip_details/<%= trip_detail.id %>">
