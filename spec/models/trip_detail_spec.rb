@@ -4,6 +4,8 @@ RSpec.describe TripDetail, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:comments) }
+
     it { should have_many(:likes) }
 
     it { should belong_to(:trip) }
