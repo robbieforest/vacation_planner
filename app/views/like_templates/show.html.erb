@@ -34,7 +34,11 @@
       </dt>
       <!-- Display detail_id start -->
       <dd>
-        <%= @like.detail_id %>
+        <% if @like.detail.present? %>
+          <a href="/trip_details/<%= @like.detail_id %>">
+            <%= @like.detail.trip_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display detail_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @like.user_id %>
+        <% if @like.user.present? %>
+          <a href="/users/<%= @like.user_id %>">
+            <%= @like.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

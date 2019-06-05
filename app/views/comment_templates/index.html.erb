@@ -62,7 +62,11 @@
 
         <!-- Display comment.user_id start -->
         <td>
-          <%= comment.user.email %>
+          <% if comment.user.present? %>
+            <a href="/users/<%= comment.user.id %>">
+              <%= comment.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.user_id end -->
 
@@ -74,7 +78,11 @@
 
         <!-- Display comment.detail_id start -->
         <td>
-          <%= comment.detail.trip_id %>
+          <% if comment.detail.present? %>
+            <a href="/trip_details/<%= comment.detail.id %>">
+              <%= comment.detail.trip_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.detail_id end -->
 

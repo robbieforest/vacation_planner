@@ -70,7 +70,11 @@
 
         <!-- Display trip_detail.trip_id start -->
         <td>
-          <%= trip_detail.trip.name %>
+          <% if trip_detail.trip.present? %>
+            <a href="/trips/<%= trip_detail.trip.id %>">
+              <%= trip_detail.trip.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display trip_detail.trip_id end -->
 

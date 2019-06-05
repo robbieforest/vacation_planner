@@ -58,13 +58,21 @@
 
         <!-- Display like.detail_id start -->
         <td>
-          <%= like.detail.trip_id %>
+          <% if like.detail.present? %>
+            <a href="/trip_details/<%= like.detail.id %>">
+              <%= like.detail.trip_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display like.detail_id end -->
 
         <!-- Display like.user_id start -->
         <td>
-          <%= like.user.email %>
+          <% if like.user.present? %>
+            <a href="/users/<%= like.user.id %>">
+              <%= like.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display like.user_id end -->
 
