@@ -53,6 +53,14 @@ class TripsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @trip = Trip.find(params.fetch("id_to_remove"))
+
+    @trip.destroy
+
+    redirect_to("/users/#{@trip.user_id}", notice: "Trip deleted successfully.")
+  end
+
   def destroy_row
     @trip = Trip.find(params.fetch("id_to_remove"))
 
