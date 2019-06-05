@@ -1,6 +1,6 @@
 class TripDetailsController < ApplicationController
   def index
-    @trip_details = TripDetail.all
+    @trip_details = TripDetail.page(params[:page]).per(10)
 
     render("trip_detail_templates/index.html.erb")
   end
